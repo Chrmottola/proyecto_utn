@@ -3,185 +3,200 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    /* Deja sin atributos todos los textos, ejemplo subrayado de link */
-    /* color: black */
-    /* Texto por defecto en negro */
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
 }
 
-/* Ajusta la letra por defecto a 10px 
-html{
-    font-size: 10px;
-}
-*/
-/* Selector por tipo de etiqueta  
-p{
-    font-size: 1.5rem;
-    padding: 1rem;
-}
-h2{ 
-    text-shadow: 5px 5px 5px black;
-    text-decoration-line: underline;
-}
-*/
-/* ---------------------------------Proyecto Cafe------------------------------------------------------------------------------- */
-/*Preponderancia de propiedades las diferentes se van sumando y las repetidas solo queda la que tiene mayor jerarquia  (Escala de <importancia)  
-1.Important corta toda precedencia que traiga de otras directivas (id,estilos en linea, clases, etiquetas, su uso debe ser limitado
-2.Estilo en linea (style) se usa directamente donde se quiere aplicar
-3.id
-4.Clase (Class)
-5.etiquetas
-/* usar import para linkear fuentes externas se utiliza desde la hoja estilos se usa para dar la misma fuente a todo el proyecto, tambien podemos linkear poniendo el link en el head de cada pagina
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
-  */
-/* Selector por tipo de etiqueta*/
-/* h1{
-    color:brown
-}
-section{
-    background-color: aqua;
-}
-*/
+/* --------------------------------------------------Index.html...................................................................... */
+.navbar_header_cafe{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    height: 15vh;
+    background: #6D6027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D3CBB8, #6D6027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-
-/* Elegir tipo de letra para toda la pagina, y color de fondo */
-.body_cafe {
-    font-family: 'Oswald', sans-serif;
-    background-color: aqua;
-    display: grid;
-    grid-template-rows: 300px 600px 250px 220px 50px 50px;
-    grid-template-columns: 1.5fr 1.5fr;
-    grid-template-areas:
-        "header header"
-        "section_1 form"
-        "section_2 form"
-        "section_3 form"
-        "div div"
-        "footer footer"
 }
 
-/* Selector por clases */
-/* Dando propiedades a la imagen de fondo,color de fondo,url, altura y que no se repita continuamente la imagen,que cubra todo el espacio,que se posicione al centro,padding y tamaño de la fuente */
-.imagen_de_fondo_header_cafe {
-    background-color: darksalmon;
+.div_header_cafe{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 25px;
+    padding-left: 2vh;
+}
+
+.div_header_cafe h2{ 
+    padding-left: 5vh;
+    
+}
+
+.navbar_cafe ul{
+    display: flex;
+    flex-direction: row;
+    gap: 12vh;
+    margin-right: 5vh;
+    list-style-type: none;   
+}
+
+.navbar_cafe a{
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+    font-weight: 700;
+    opacity: 0.3;   
+}
+
+.navbar_cafe a:hover{
+    opacity:1;  
+    font-size: 17px; 
+}
+
+.section_cafe{
     background-image: url(./img/granos.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
-    padding: 1rem;
-    font-size: 3rem;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+}
+
+.footer_cafe{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 2vh;
+    background: #6D6027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D3CBB8, #6D6027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+    height: 8vh;
+}
+
+
+@media(max-width: 767px){
+    .navbar_header_cafe{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* --------------------------------------------------------guia.html----------------------------------------------------------------- */
+
+.body_guia_cafe{
+    display: grid;
+    /* establece tamaño de filas */
+    grid-template-rows: 100px 100px 500px 500px 40px;
+    /* establece tamaño de columnas atributo repeat repite la misma medida en las columnas en este caso 4 columnas */
+    grid-template-columns: repeat(4, 1fr);
+    /* Establece la grilla usar el mismo nombre en el grid-area de cada elemento*/
+    grid-template-areas:
+        "header header header header"
+        "nav nav nav nav"
+        "main main main aside"
+        "section_1 section_1 section_1 aside"
+        "footer footer footer footer ";
+}
+
+.navbar_header_guia_cafe{
+    background: #6D6027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D3CBB8, #6D6027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     grid-area: header;
     display: flex;
     flex-direction: row;
-    justify-content: left;
-    border-bottom: solid black;
+    /* cuando el flex direccion es row se ajusta el texto en el eje x usamos justify */
+    /* cuando el flex direccion es column se ajusta el texto en el eje y usamos aling-items */
+    justify-content: space-between;
+    align-items: center;     
 }
 
-.color_de_texto_cafe {
-    color: black;
+.div_header_guia_cafe{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 25px;
+    padding-left: 2vh;
 }
 
-.titulo_cafe {
-    color: blue;
-    font-size: 50px;
-}
+.div_header_guia_cafe h2{ 
+    padding-left: 5vh;
+}    
 
-.tamaño_subtitulos_cafe {
+.nav_saludo_guia_cafe{
+    grid-area: nav;
+    text-align: center;
+    font-size: 20px;
     font-weight: 700;
-    font-size: 2.5rem;
-    padding: 1rem;
+    color:darkslategray;
+    padding: 4vh;
+    background: rgb(109,96,39);
+    background: linear-gradient(90deg, rgba(109,96,39,1) 7%, rgba(174,164,132,1) 51%, rgba(211,203,184,1) 94%);
+    border: #6D6027 solid 0.1vh;
+}
+
+.main_guia_cafe{
+    grid-area: main;
+    background-color:#D3CBB8;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    overflow: auto;
+    padding: 5vh;
+    border:darkgray solid 0.4vh;
+  
+}
+
+.tamaño_titulo_cafe{
+    font-size: 25px;
+    font-weight: 700;
     text-decoration: underline;
 }
 
-.pasos_para_servir_un_buen_cafe {
-    background-color: darksalmon;
-    background-image: url(./img/pattercoffe.jpg);
-    background-repeat: no-repeat;
-    /* Cover adapta la imagen al tamaño de la pantalla   */
-    background-size: cover;
-    background-position: center;
-    grid-area: section_1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: solid black;
-    padding-bottom: 1rem;
-}
-
-.pasos_para_servir_un_buen_cafe ol li {
-    font-size: 1.5rem;
+.tamaño_subtitulos_cafe{
+    font-size: 18px;
+    text-decoration: underline;
     font-weight: 700;
 }
 
-.tipos_de_cafe_cafe {
-    background-color: darksalmon;
-    background-image: url(./img/pattercoffe.jpg);
-    background-repeat: no-repeat;
-    /* Cover adapta la imagen al tamaño de la pantalla   */
-    background-size: cover;
-    background-position: center;
-    grid-area: section_2;
+.pasos_para_servir_un_buen_cafe{
+    grid-area:section_1;
     display: flex;
-    flex-direction: column;
+    flex-direction:column ;
+    align-content: center;
     align-items: center;
-    border: solid black;
+    text-align: center;
+    justify-content: space-around;
+    font-size: 15px;
+    background-color:#D3CBB8;
+    border:darkgray solid 0.4vh;
+    border-bottom: darkgray solid 0.8vh;
 }
 
-.tipos_de_cafe_cafe ul li {
-    font-size: 1.5rem;
+.titulo_servir_cafe{
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.lista_servir_cafe{
+    font-size: 18px;
     font-weight: 700;
 }
 
-.tipos_de_granos_cafe {
-    background-color: darksalmon;
-    background-image: url(./img/pattercoffe.jpg);
-    background-repeat: no-repeat;
-    /* Cover adapta la imagen al tamaño de la pantalla   */
-    background-size: cover;
-    background-position: center;
-    grid-area: section_3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: solid black;
+.aside_cafe{
+    grid-area: aside;
+    background-color:#D3CBB8;
 }
 
-.tipos_de_granos_cafe ul li {
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.contenido_cafe {
-    background-color: white;
-    grid-area: form;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: solid black;
-    overflow: auto;
-    padding: 1rem;
-}
-
-.volver_a_titulo_cafe {
-    background-color: white;
-    grid-area: div;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: solid black;
-    justify-content: space-between;
-}
-
-.footer_cafe {
-    background-color: white;
+.footer_guia{
     grid-area: footer;
     display: flex;
-    flex-direction: row;
+    justify-content:center;
     align-items: center;
-    border: solid black;
-    justify-content: left;
+    gap: 2vh;  
+    background: #6D6027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D3CBB8, #6D6027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-/* Selector por id solo se puede usar 1 solo id */
-#ir_a_titulo {
-    background-color: darksalmon;
-}
